@@ -58,13 +58,37 @@
 			children = (
 				A2772509298EB04F00711DDD /* AppDelegate.swift */,
 				A277250B298EB04F00711DDD /* SceneDelegate.swift */,
-				A277250D298EB04F00711DDD /* ViewController.swift */,
-				A277250F298EB04F00711DDD /* Main.storyboard */,
+				A2ABCCC3298F8BCE00E77592 /* Model */,
+				A2ABCCC2298F8BC200E77592 /* View */,
+				A2ABCCC1298F8BB700E77592 /* Controller */,
 				A2772512298EB05200711DDD /* Assets.xcassets */,
 				A2772514298EB05200711DDD /* LaunchScreen.storyboard */,
 				A2772517298EB05200711DDD /* Info.plist */,
 			);
 			path = "BMI Calculator";
+			sourceTree = "<group>";
+		};
+		A2ABCCC1298F8BB700E77592 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A277250D298EB04F00711DDD /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2ABCCC2298F8BC200E77592 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A277250F298EB04F00711DDD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2ABCCC3298F8BCE00E77592 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
