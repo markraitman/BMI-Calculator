@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculate View Controller-->
         <scene sceneID="wcA-oU-KMt">
             <objects>
-                <viewController id="1B6-JN-Nhv" customClass="ViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1B6-JN-Nhv" customClass="CalculateViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dAI-9Q-gMY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,25 +131,26 @@
                         <outlet property="hightSlider" destination="bHg-wo-M35" id="fgn-v4-1a4"/>
                         <outlet property="weightLabel" destination="z22-Vy-dCN" id="7tL-Ff-3vI"/>
                         <outlet property="weightSlider" destination="ECt-1j-Eow" id="kU1-L8-177"/>
+                        <segue destination="pfk-sK-P3S" kind="presentation" identifier="goToResult" id="8Ew-t8-9CV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6PS-ck-R5Q" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="196" y="206"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="gtM-yo-1sD">
             <objects>
-                <viewController id="pfk-sK-P3S" sceneMemberID="viewController">
+                <viewController id="pfk-sK-P3S" customClass="ResultViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nGL-Al-30l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="wAt-h2-ozu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y2d-9c-jSD">
-                                <rect key="frame" x="89" y="359.5" width="236" height="177.5"/>
+                                <rect key="frame" x="89" y="332.5" width="236" height="177.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="YOUR RESULT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaK-WO-Sbk">
                                         <rect key="frame" x="0.0" y="0.0" width="236" height="42"/>
@@ -172,7 +173,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRz-RP-f5C">
-                                <rect key="frame" x="20" y="811" width="374" height="51"/>
+                                <rect key="frame" x="20" y="757" width="374" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="xPv-Ae-dyU"/>
@@ -187,6 +188,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="pfk-sK-P3S" eventType="touchUpInside" id="CNc-GA-PLr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E7y-Ut-fZR"/>
@@ -203,6 +207,11 @@
                             <constraint firstItem="MRz-RP-f5C" firstAttribute="leading" secondItem="nGL-Al-30l" secondAttribute="leadingMargin" id="sp5-fh-3yZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0ch-ZQ-YBO"/>
+                    <connections>
+                        <outlet property="adviceLabel" destination="m63-ey-HOe" id="Ka1-sz-MbQ"/>
+                        <outlet property="bmiLabel" destination="N2m-g7-Fo6" id="8uc-G6-Lb5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0a-Ek-RjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
