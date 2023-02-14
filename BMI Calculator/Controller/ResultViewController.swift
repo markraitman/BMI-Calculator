@@ -9,17 +9,17 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     var bmiValue: String?
     var bmiAdvice: String?
     var bmiColor: UIColor?
     
 
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +28,7 @@ class ResultViewController: UIViewController {
         view.backgroundColor = bmiColor
     }
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func recalculatePressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

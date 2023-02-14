@@ -10,10 +10,10 @@ import UIKit
 
 struct CalculatorBrain {
     
-    //MARK: Properties
+    //MARK: - Properties  
     var bmi: BMI?
     
-    //MARK: Methods
+    //MARK: - Methods
     mutating func calculateBMI(height: Float, weight: Float) {
         let bmiValue = weight / powf(height, 2)
         bmi = BMI(value: bmiValue, advice: "", color: .red)

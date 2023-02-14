@@ -9,22 +9,22 @@ import UIKit
 
 class CalculateViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     var calculatorBrain = CalculatorBrain()
     
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var hightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func heghtSliderChanged(_ sender: UISlider) {
         heightLabel.text = String(format: "%.2f", sender.value) + "m"
     }
@@ -40,7 +40,7 @@ class CalculateViewController: UIViewController {
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
-    //MARK: Segue
+    //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
